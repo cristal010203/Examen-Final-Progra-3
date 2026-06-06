@@ -10,6 +10,6 @@ class RecipesTableSeeder extends Seeder
     public function run(): void
     {   // create 3 recipes for each chef
 
-        Recipe::factory()->count(3)->create();
+        Recipe::factory()->count(30)->create();
     }
 }
