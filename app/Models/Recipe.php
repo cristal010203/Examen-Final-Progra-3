@@ -14,5 +14,9 @@ class Recipe extends Model
         'preparation_time',
         'chef_id',
     ];
+    public function chef()
+    {
+        return $this->belongsTo(Chef::class);
+    }
     
 }

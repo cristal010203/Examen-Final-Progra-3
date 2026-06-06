@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('recipes', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement(); // primary key
             $table->string('title', 100);
             $table->string('category', 255);
             $table->integer('preparation_time')->unsigned()->default(0);
-            $table->foreignId('chef_id')->constrained('chefs')->onDelete('cascade');
+            $table->foreignId('chef_id')->constrained('chefs')->onDelete('cascade'); // foreign key
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });
